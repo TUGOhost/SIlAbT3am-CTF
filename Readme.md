@@ -24,6 +24,6 @@ Apache Shrio
 
 postgresql
 
-**前端**
+**前端框架**
 
 Bootstrap+jQuery
