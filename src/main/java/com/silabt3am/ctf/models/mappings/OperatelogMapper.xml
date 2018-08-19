@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.silabt3am.ctf.models.dao.OperatelogMapper" >
+  <resultMap id="BaseResultMap" type="com.silabt3am.ctf.pojo.Operatelog" >
+
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="operatorid" property="operatorid" jdbcType="BIGINT" />
+    <result column="operatefunc" property="operatefunc" jdbcType="VARCHAR" />
+    <result column="operatetime" property="operatetime" jdbcType="TIMESTAMP" />
+    <result column="ipaddr" property="ipaddr" jdbcType="VARCHAR" />
+  </resultMap>
+  <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+  <sql id="Example_Where_Clause" >
+
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+
+    "id", "operatorid", "operatefunc", "operatetime", "ipaddr"
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.silabt3am.ctf.pojo.OperatelogExample" >
+
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from "public"."operatelog"
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+
+    select 
+    <include refid="Base_Column_List" />
+    from "public"."operatelog"
+    where "id" = #{id,jdbcType=BIGINT}
+  </select>
+  
+  <select id="selectAll" resultMap="BaseResultMap" >
+
+    select 
+    *
+    from "public"."operatelog"
+    order by "operatetime" DESC
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+
+    delete from "public"."operatelog"
+    where "id" = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.silabt3am.ctf.pojo.OperatelogExample" >
+ 
+    delete from "public"."operatelog"
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.silabt3am.ctf.pojo.Operatelog"  useGeneratedKeys="true" keyProperty="id">
+ 
+    insert into "public"."operatelog" ("operatorid", "operatefunc", 
+      "operatetime", "ipaddr")
+    values (#{operatorid,jdbcType=BIGINT}, #{operatefunc,jdbcType=VARCHAR}, 
+      #{operatetime,jdbcType=TIMESTAMP}, #{ipaddr,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.silabt3am.ctf.pojo.Operatelog" >
+
+    insert into "public"."operatelog"
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        "id",
+      </if>
+      <if test="operatorid != null" >
+        "operatorid",
+      </if>
+      <if test="operatefunc != null" >
+        "operatefunc",
+      </if>
+      <if test="operatetime != null" >
+        "operatetime",
+      </if>
+      <if test="ipaddr != null" >
+        "ipaddr",
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="operatorid != null" >
+        #{operatorid,jdbcType=BIGINT},
+      </if>
+      <if test="operatefunc != null" >
+        #{operatefunc,jdbcType=VARCHAR},
+      </if>
+      <if test="operatetime != null" >
+        #{operatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ipaddr != null" >
+        #{ipaddr,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.silabt3am.ctf.pojo.OperatelogExample" resultType="java.lang.Integer" >
+
+    select count(*) from "public"."operatelog"
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+
+    update "public"."operatelog"
+    <set >
+      <if test="record.id != null" >
+        "id" = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.operatorid != null" >
+        "operatorid" = #{record.operatorid,jdbcType=BIGINT},
+      </if>
+      <if test="record.operatefunc != null" >
+        "operatefunc" = #{record.operatefunc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operatetime != null" >
+        "operatetime" = #{record.operatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.ipaddr != null" >
+        "ipaddr" = #{record.ipaddr,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+
+    update "public"."operatelog"
+    set "id" = #{record.id,jdbcType=BIGINT},
+      "operatorid" = #{record.operatorid,jdbcType=BIGINT},
+      "operatefunc" = #{record.operatefunc,jdbcType=VARCHAR},
+      "operatetime" = #{record.operatetime,jdbcType=TIMESTAMP},
+      "ipaddr" = #{record.ipaddr,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.silabt3am.ctf.pojo.Operatelog" >
+
+    update "public"."operatelog"
+    <set >
+      <if test="operatorid != null" >
+        "operatorid" = #{operatorid,jdbcType=BIGINT},
+      </if>
+      <if test="operatefunc != null" >
+        "operatefunc" = #{operatefunc,jdbcType=VARCHAR},
+      </if>
+      <if test="operatetime != null" >
+        "operatetime" = #{operatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ipaddr != null" >
+        "ipaddr" = #{ipaddr,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where "id" = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.silabt3am.ctf.pojo.Operatelog" >
+
+    update "public"."operatelog"
+    set "operatorid" = #{operatorid,jdbcType=BIGINT},
+      "operatefunc" = #{operatefunc,jdbcType=VARCHAR},
+      "operatetime" = #{operatetime,jdbcType=TIMESTAMP},
+      "ipaddr" = #{ipaddr,jdbcType=VARCHAR}
+    where "id" = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
