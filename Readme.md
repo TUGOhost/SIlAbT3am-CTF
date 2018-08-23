@@ -10,7 +10,7 @@ spring+springMVC
 
 **数据库连接池**
 
-阿里巴巴Druid
+Alibaba Druid
 
 **SQL映射框架**
 
@@ -27,3 +27,11 @@ postgresql
 **前端框架**
 
 Bootstrap+jQuery
+
+**杂项**
+
+penggle
+
+mail
+
+maven
