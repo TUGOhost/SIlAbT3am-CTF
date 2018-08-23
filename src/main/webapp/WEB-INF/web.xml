@@ -37,7 +37,7 @@
 	</listener>
 
 	<servlet>
-		<servlet-name>phrackCTF</servlet-name>
+		<servlet-name>silabt3amCTF</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -62,7 +62,7 @@
 	</filter-mapping>
 
 	<servlet-mapping>
-		<servlet-name>phrackCTF</servlet-name>
+		<servlet-name>silabt3amCTF</servlet-name>
 		<url-pattern>/</url-pattern>
 
 	</servlet-mapping>
