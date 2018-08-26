@@ -6,8 +6,8 @@ import java.util.Date;
 import com.silabt3am.ctf.pojo.RanklistObj;
 
 //用户得分排序
-public class CompareScore {
-	public int compare(Object 01,Object o2) {
+public class CompareScore implements Comparator {
+	public int compare(Object o1,Object o2) {
 		long score1 = ((RanklistObj) o1).getuserobj().getScore();
 		long score2 = ((RanklistObj) o2).getuserobj().getScore();
 		Date submit1 = ((RanklistObj) o1).getLastSummit();
@@ -26,4 +26,5 @@ public class CompareScore {
 			}
 		}
 	}
+
 }

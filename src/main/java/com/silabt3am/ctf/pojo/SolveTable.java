@@ -1,6 +1,6 @@
 package com.silabt3am.ctf.pojo;
 
-import java.util.Date
+import java.util.Date;
 
 public class SolveTable {
 	
