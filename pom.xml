@@ -169,7 +169,7 @@
 		<version>1.2</version>
 	</dependency>
 	
-	<!-- druid和shiro都使用最新版本 -->
+	<!-- druid使用最新版本 -->
 	<!-- 使用alibaba druid数据库连接池 -->
 	<dependency>
 		<groupId>com.alibaba</groupId>
@@ -183,13 +183,13 @@
 		<artifactId>shiro-core</artifactId>
 		<version>1.2.6</version>
 	</dependency>
-	
+
 	<dependency>
 		<groupId>org.apache.shiro</groupId>
 		<artifactId>shiro-web</artifactId>
 		<version>1.2.6</version>
 	</dependency>
-	
+
 	<dependency>
 		<groupId>org.apache.shiro</groupId>
 		<artifactId>shiro-ehcache</artifactId>
@@ -197,10 +197,10 @@
 	</dependency>
 	
 	<dependency>
-      <groupId>org.ehcache</groupId>
-      <artifactId>ehcache</artifactId>
-      <version>3.5.2</version>
-    </dependency>
+		<groupId>net.sf.ehcache</groupId>
+		<artifactId>ehcache-core</artifactId>
+		<version>2.6.11</version>
+	</dependency>
     
     <dependency>
     	<groupId>org.apache.shiro</groupId>

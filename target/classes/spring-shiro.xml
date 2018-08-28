@@ -80,7 +80,7 @@
 	</bean>
 			
 	<!-- 自定义的Realm -->
-	<bean id="shiroDbRealm" class="top.phrack.ctf.realm.shiroDbRealm">
+	<bean id="shiroDbRealm" class="com.silabt3am.ctf.realm.shiroDbRealm">
 		 <property name="cachingEnabled" value="false"/>
 		 <property name="credentialsMatcher" ref="sha256Macher"/>
 	</bean>
