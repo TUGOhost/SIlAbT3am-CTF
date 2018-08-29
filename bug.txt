@@ -31,7 +31,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
  ealm] for bean with name 'shiroDbRealm' defined in class path resource [spring-shiro.xml]; nested exceptio
  n is java.lang.ClassNotFoundException: com.silabt3am.ctf.realm.shiroDbRealm
 
- 
+复制粘贴： 
 [20:25:08:673] [INFO] - org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:304) - Root WebApplicationContext: initialization started
 [20:25:08:746] [INFO] - org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:583) - Refreshing Root WebApplicationContext: startup date [Wed Aug 29 20:25:08 CST 2018]; root of context hierarchy
 [20:25:08:814] [INFO] - org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) - Loading XML bean definitions from class path resource [mybatis-config.xml]
