@@ -13,6 +13,7 @@
   </properties>
   
   <dependencies>
+	  <!--
   	<dependency>
     	<groupId>junit</groupId>
     	<artifactId>junit</artifactId>
@@ -78,7 +79,8 @@
 	</dependency>
 	
 	
-	<!-- spring单元测试依赖 -->
+	<!- spring单元测试依赖 -->
+	  <!--
 	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-test</artifactId>
@@ -92,7 +94,7 @@
 		<version>3.6.1</version>
 	</dependency>
 	
-	<!-- postgresql的JDBC驱动 -->
+	<!- postgresql的JDBC驱动 --><!--
 	<dependency>
 		<groupId>org.postgresql</groupId>
 		<artifactId>postgresql</artifactId>
@@ -105,14 +107,14 @@
 		<version>3.4.5</version>
 	</dependency>
 	
-	<!-- mybatis缓存 -->
+	<!- mybatis缓存 --><!--
 	<dependency>
 		<groupId>org.mybatis.caches</groupId>
 		<artifactId>mybatis-ehcache</artifactId>
 		<version>1.1.0</version>
 	</dependency>
 	
-	<!-- 映入JSON -->
+	<!- 映入JSON --><!--
 	<dependency>
 		<groupId>net.sf.json-lib</groupId>
 		<artifactId>json-lib</artifactId>
@@ -149,7 +151,7 @@
 		<artifactId>log4j-core</artifactId>
 		<version>2.11.0</version>
 	</dependency>
-	<!-- 注意不要敲错 -->
+	<!- 注意不要敲错 --><!--
 	
 	<dependency>
 		<groupId>org.apache.logging.log4j</groupId>
@@ -169,15 +171,15 @@
 		<version>1.2</version>
 	</dependency>
 	
-	<!-- druid使用最新版本 -->
-	<!-- 使用alibaba druid数据库连接池 -->
+	<!- druid使用最新版本 --><!--
+	<!- 使用alibaba druid数据库连接池 --><!--
 	<dependency>
 		<groupId>com.alibaba</groupId>
 		<artifactId>druid</artifactId>
 		<version>1.1.10</version>
 	</dependency>
 	
-	<!-- Shiro安全框架 -->
+	<!- Shiro安全框架 --><!--
 	<dependency>
 		<groupId>org.apache.shiro</groupId>
 		<artifactId>shiro-core</artifactId>
@@ -214,7 +216,7 @@
     	<version>1.2.6</version>
     </dependency>
     
-    <!-- 验证码 -->
+    <!- 验证码 --><!--
     <dependency>
     	<groupId>com.github.penggle</groupId>
     	<artifactId>kaptcha</artifactId>
@@ -227,7 +229,7 @@
   		<version>3.7</version>
 	</dependency>
 	
-	<!-- 邮件系统 -->
+	<!- 邮件系统 --><!--
 	<dependency>
          <groupId>com.sun.mail</groupId>
          <artifactId>javax.mail</artifactId>
@@ -239,7 +241,7 @@
     	<version>1.1.1</version>
 	</dependency>
 	
-	<!-- velocity模板解析依赖 -->
+	<!- velocity模板解析依赖 --><!--
 	<dependency>
 		<groupId>org.apache.velocity</groupId>
 		<artifactId>velocity</artifactId>
@@ -268,7 +270,13 @@
     	<groupId>org.jsoup</groupId>
     	<artifactId>jsoup</artifactId>
    	 	<version>1.8.3</version>
-	</dependency>
+	</dependency>-->
+	  <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
+	  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot</artifactId>
+		  <version>2.5.5</version>
+	  </dependency>
   </dependencies>
   <build>
   	<finalName>silabt3amCTF</finalName>
